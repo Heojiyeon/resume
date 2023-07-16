@@ -26,8 +26,16 @@ export default function Layout({ children }: LayoutProps) {
     <GlobalWrapper
       style={
         theme
-          ? { backgroundColor: BACKGROUND_DARK, color: FONT_LIGHT }
-          : { backgroundColor: BACKGROUND_LIGHT, color: FONT_DARK }
+          ? {
+              backgroundColor: BACKGROUND_DARK,
+              color: FONT_LIGHT,
+              transition: 'all 0.4s ease-in',
+            }
+          : {
+              backgroundColor: BACKGROUND_LIGHT,
+              color: FONT_DARK,
+              transition: 'all 0.4s ease-in',
+            }
       }
     >
       {children}
