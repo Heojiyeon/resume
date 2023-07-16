@@ -4,12 +4,12 @@ import React, { useContext, useState } from 'react';
 import Content from '../components/Main/Content';
 import DarkModeButton from '../components/Main/DarkmodeButton';
 import Layout from '../components/Main/Layout';
-import { ThemeContext } from '../store/context';
+import { ThemeContext } from '../context/ThemeContext';
 
 const IndexPage: React.FC<PageProps> = () => {
-  const theme = useContext(ThemeContext);
+  const isDark = useContext(ThemeContext);
 
-  const [currTheme, setTheme] = useState(theme);
+  const [currTheme, setTheme] = useState(isDark);
 
   return (
     <ThemeContext.Provider value={currTheme}>

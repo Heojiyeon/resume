@@ -1,11 +1,18 @@
 import styled from '@emotion/styled';
 import '@fontsource/gothic-a1';
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
+import {
+  BACKGROUND_DARK,
+  BACKGROUND_LIGHT,
+  FONT_DARK,
+  FONT_LIGHT,
+} from '../../utils/constants';
 
-const Wrapper = styled('div')`
-  border: 2px solid green;
-  padding: 10px;
+const GlobalWrapper = styled('div')`
   font-family: 'Gothic A1, sans-serif';
+  height: 100vh;
+  width: 100%;
 `;
 
 type LayoutProps = {
@@ -13,5 +20,17 @@ type LayoutProps = {
 };
 
 export default function Layout({ children }: LayoutProps) {
-  return <Wrapper>{children}</Wrapper>;
+  const theme = useContext(ThemeContext);
+
+  return (
+    <GlobalWrapper
+      style={
+        theme
+          ? { backgroundColor: BACKGROUND_DARK, color: FONT_LIGHT }
+          : { backgroundColor: BACKGROUND_LIGHT, color: FONT_DARK }
+      }
+    >
+      {children}
+    </GlobalWrapper>
+  );
 }

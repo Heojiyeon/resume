@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React, { useCallback, useContext } from 'react';
-import { ThemeContext } from '../../store/context';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const ButtonBackground = styled.div`
   width: 80px;
@@ -17,30 +17,36 @@ const ButtonToggle = styled.div`
 `;
 
 type DarkModeButtonProps = {
-  setTheme: (currTheme: string) => void;
+  setTheme: (currTheme: boolean) => void;
 };
 
 export default function DarkModeButton({ setTheme }: DarkModeButtonProps) {
   const theme = useContext(ThemeContext);
 
   const handleModeButton = useCallback(() => {
-    theme === 'light' ? setTheme('dark') : setTheme('light');
+    !theme ? setTheme(true) : setTheme(false);
   }, [theme]);
 
   return (
     <ButtonBackground
       style={
-        theme === 'light'
-          ? { backgroundColor: 'gray' }
-          : { backgroundColor: 'black' }
+        !theme ? { backgroundColor: 'gray' } : { backgroundColor: 'black' }
       }
     >
       <ButtonToggle
         onClick={handleModeButton}
         style={
-          theme === 'light'
-            ? { backgroundColor: 'black' }
-            : { backgroundColor: 'white' }
+          !theme
+            ? {
+                backgroundColor: 'black',
+                transform: 'translate(0%)',
+                transition: 'all 0.4s ease-in',
+              }
+            : {
+                backgroundColor: 'white',
+                transform: 'translate(100%)',
+                transition: 'all 0.4s ease-in',
+              }
         }
       ></ButtonToggle>
     </ButtonBackground>
