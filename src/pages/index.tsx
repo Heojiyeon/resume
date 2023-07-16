@@ -1,9 +1,9 @@
 import '@fontsource/gothic-a1';
 import type { HeadFC, PageProps } from 'gatsby';
 import React, { useContext, useState } from 'react';
-import Content from '../components/content';
-import DarkModeButton from '../components/darkmodeButton';
-import Layout from '../components/layout';
+import Content from '../components/Main/Content';
+import DarkModeButton from '../components/Main/DarkmodeButton';
+import Layout from '../components/Main/Layout';
 import { ThemeContext } from '../store/context';
 
 const IndexPage: React.FC<PageProps> = () => {
