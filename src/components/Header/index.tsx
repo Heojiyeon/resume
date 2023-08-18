@@ -1,11 +1,15 @@
 import React from 'react';
 import HeaderIntroduce from './HeaderIntroduce';
+import styled from '@emotion/styled';
 
 export default function Header() {
   return (
-    <div>
-      Header
+    <HeaderContainer>
       <HeaderIntroduce />
-    </div>
+    </HeaderContainer>
   );
 }
+
+const HeaderContainer = styled('div')`
+  margin: 1rem;
+`;
