@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import '@fontsource/gothic-a1';
 import React, { useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
+import { ThemeContext } from '../../store/ThemeContext';
 import {
   BACKGROUND_DARK,
   BACKGROUND_LIGHT,
@@ -19,7 +19,7 @@ type LayoutProps = {
   children: React.ReactElement;
 };
 
-export default function Layout({ children }: LayoutProps) {
+export default function Main({ children }: LayoutProps) {
   const theme = useContext(ThemeContext);
 
   return (

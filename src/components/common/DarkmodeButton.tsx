@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React, { useCallback, useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
+import { ThemeContext } from '../../store/ThemeContext';
 
 const ButtonBackground = styled.div`
   width: 80px;
