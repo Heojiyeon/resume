@@ -1,5 +1,19 @@
 import React from 'react';
 
-export default function ProjectHeader() {
-  return <div>Project Header</div>;
+type ProjectHeaderProp = {
+  header: {
+    title: string;
+    period: string;
+  };
+};
+
+export default function ProjectHeader({ header }: ProjectHeaderProp) {
+  const { title, period } = header;
+
+  return (
+    <div>
+      <h2>{title}</h2>
+      <div>{period}</div>
+    </div>
+  );
 }

@@ -4,7 +4,7 @@ import { HeaderIntroduces, HeaderTitle } from '../../utils/headerData';
 export default function HeaderIntroduce() {
   return (
     <div>
-      <h2>{HeaderTitle}</h2>
+      <h1>{HeaderTitle}</h1>
       <div>
         {HeaderIntroduces.map(introduce => (
           <div key={introduce._id}>
