@@ -8,10 +8,10 @@ export default function Skill() {
     <div>
       <h1 style={{ color: FONT_HIGHLIGHT, marginTop: 0 }}>Skills.</h1>
       {skills.map(skill => (
-        <>
+        <div style={{ marginBottom: '3rem' }}>
           <h2>{skill.title}</h2>
           <SkillContent contents={skill.contents} />
-        </>
+        </div>
       ))}
     </div>
   );

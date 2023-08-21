@@ -7,7 +7,7 @@ const experiences = [
     },
     content: {
       description:
-        '리액트의 본질을 알고 활용하기 위해 공식 문서를 읽고 토론하는 스터디를 진행하며 흥미롭고 새롭게 알게된 지식을 블로그에 기록',
+        '리액트의 본질을 알고 활용하기 위해 공식 문서를 읽고 토론하는 스터디 진행 및 흥미롭고 새롭게 알게된 지식을 블로그에 기록',
       links: {
         title: '리액트에서 상태를 관리하는 방법에 대해 작성한 글',
         link: 'https://velog.io/@jiy7107/React-Preserving-and-Resetting-State',
@@ -22,7 +22,7 @@ const experiences = [
     },
     content: {
       description:
-        '유튜브 트렌드 분석 서비스의 프론트엔드 개발자로 공모전에 참여하였으며 은상 수상',
+        '유튜브 트렌드 분석 서비스의 프론트엔드 개발자로 공모전에 참여',
       links: {
         title: 'Github',
         link: 'https://github.com/milkymilky0116/Youtube-Trend-Analysis-Project',

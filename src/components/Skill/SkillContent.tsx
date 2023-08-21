@@ -9,7 +9,9 @@ export default function SkillContent({ contents }: SkllContentProp) {
   return (
     <StyledUl>
       {contents.map((content, idx) => (
-        <StyledLi key={idx}>{content} </StyledLi>
+        <StyledLi key={idx}>
+          {typeof content === 'object' ? content.join(' ') : content}
+        </StyledLi>
       ))}
     </StyledUl>
   );

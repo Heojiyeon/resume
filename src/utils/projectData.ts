@@ -99,7 +99,6 @@ const projects = [
       results: [
         'Formik, Yup을 활용한 폼 데이터 핸들링',
         'JavaScript로 개발되었던 프로젝트를 TypeScript로 마이그레이션 함에 따라 타입 안정성 확보',
-        'package-lock.json 기반의 버전 정보 고정을 도입해 의존성 버저닝 이슈 방지',
         'React-query 도입 리팩토링으로 코드 개선 및 렌더링 이슈 개선',
       ],
       cooperations: [

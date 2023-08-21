@@ -6,7 +6,7 @@ const skills = [
   {
     title: 'Frontend',
     contents: [
-      'React',
+      ['React'],
       ['Vue.js', 'Next.js'],
       ['Context API', 'Recoil'],
       ['React-Query', 'SWR'],

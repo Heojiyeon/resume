@@ -8,7 +8,7 @@ import styled from '@emotion/styled';
 
 export default function HeaderIntroduce() {
   return (
-    <>
+    <HeaderIntroduceContainer>
       <PrivacyContainer>
         <h1>{HeaderTitle}</h1>
         <PrivacyContactContainer>
@@ -30,9 +30,13 @@ export default function HeaderIntroduce() {
           </div>
         ))}
       </IntroduceContainer>
-    </>
+    </HeaderIntroduceContainer>
   );
 }
+
+const HeaderIntroduceContainer = styled('div')`
+  margin-top: 3rem;
+`;
 
 const PrivacyContainer = styled('div')`
   display: flex;
