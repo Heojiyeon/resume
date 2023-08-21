@@ -1,5 +1,15 @@
 import React from 'react';
 
-export default function SkillContent() {
-  return <div>Skill Content</div>;
+type SkllContentProp = {
+  contents: string[];
+};
+
+export default function SkillContent({ contents }: SkllContentProp) {
+  return (
+    <ul>
+      {contents.map((content, idx) => (
+        <li key={idx}>{content}</li>
+      ))}
+    </ul>
+  );
 }
