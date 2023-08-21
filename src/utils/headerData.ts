@@ -1,4 +1,22 @@
-const HeaderTitle = '안녕하세요, 허지연입니다';
+const HeaderTitle = '허지연';
+
+const HeaderContacts = [
+  {
+    _id: 0,
+    title: 'Email',
+    content: 'jiy7107@gmail.com',
+  },
+  {
+    _id: 1,
+    title: 'Velog',
+    content: 'https://velog.io/@jiy7107',
+  },
+  {
+    _id: 2,
+    title: 'Github',
+    content: 'https://github.com/Heojiyeon',
+  },
+];
 
 const HeaderIntroduces = [
   {
@@ -12,8 +30,8 @@ const HeaderIntroduces = [
     subheading:
       '프로젝트의 전체를 내다보고 일부를 개발해 나아간다는 마인드로 협업에 임하고 있습니다.',
     description:
-      '개발에는 정답이 없기 때문에 나만의 주관을 가지고 의견을 표출하되, 언제든 팀의 방향에 녹아들 수 있도록 열린 마인드로 소통하고 다양한 사람의 시각에서 배우고 성장하기 위해 코드 리뷰 문화를 적극 활용합니다. 다른 사람의 코드를 확인하면서 개발에 대한 다양한 표현 방식을 배우기도 하고, 내 코드에 달린 리뷰를 확인하며 개선 방향을 고민합니다.',
+      '나만의 주관을 가지고 의견을 표출하되, 언제든 팀의 방향에 녹아들 수 있도록 열린 마인드로 소통하고 다양한 사람의 시각에서 배우고 성장하기 위해 코드 리뷰 문화를 적극 활용합니다. 다른 사람의 코드를 확인하면서 개발에 대한 다양한 표현 방식을 배우기도 하고, 내 코드에 달린 리뷰를 확인하며 개선 방향을 고민합니다.',
   },
 ];
 
-export { HeaderTitle, HeaderIntroduces };
+export { HeaderTitle, HeaderContacts, HeaderIntroduces };

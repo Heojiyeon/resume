@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import React from 'react';
 
 type ProjectContentProp = {
@@ -22,47 +23,58 @@ export default function ProjectContent({ content }: ProjectContentProp) {
   return (
     <div>
       <div>
-        [설명] <br />
+        <strong>[설명]</strong>
+        <br />
         {description}
       </div>
+      <br />
       <div>
-        [목표] <br /> {goal}
+        <strong>[목표]</strong>
+        <br /> {goal}
       </div>
-      <ul>
-        [담당 역할]
+      <StyledUl>
+        <strong>[담당 역할]</strong>
         {roles.map((role, idx) => (
-          <li key={roles.length + idx}>{role}</li>
+          <StyledLi key={roles.length + idx}>{role}</StyledLi>
         ))}
-      </ul>
-      <ul>
-        [성과 및 배운점]
+      </StyledUl>
+      <StyledUl>
+        <strong>[성과 및 배운점]</strong>
         {results.map((result, idx) => (
-          <li key={results.length + idx}>{result}</li>
+          <StyledLi key={results.length + idx}>{result}</StyledLi>
         ))}
-      </ul>
-      <ul>
-        [협업]
+      </StyledUl>
+      <StyledUl>
+        <strong>[협업]</strong>
         {cooperations.map((cooperation, idx) => (
-          <li key={cooperations.length + idx}>{cooperation}</li>
+          <StyledLi key={cooperations.length + idx}>{cooperation}</StyledLi>
         ))}
-      </ul>
-      <ul>
-        [사용 기술]
+      </StyledUl>
+      <StyledUl>
+        <strong>[사용 기술]</strong>
         {stacks.map((stack, idx) => (
-          <li key={stacks.length + idx}> {stack}</li>
+          <StyledLi key={stacks.length + idx}> {stack}</StyledLi>
         ))}
-      </ul>
-      <ul>
-        [관련 링크]
-        <li>
+      </StyledUl>
+      <StyledUl>
+        <strong>[관련 링크]</strong>
+        <StyledLi>
           <a href={links.github}>Github</a>
-        </li>
+        </StyledLi>
         {links.review && (
-          <li>
+          <StyledLi>
             <a href={links.review}>회고</a>
-          </li>
+          </StyledLi>
         )}
-      </ul>
+      </StyledUl>
     </div>
   );
 }
+
+const StyledUl = styled('ul')`
+  padding: 0;
+`;
+
+const StyledLi = styled('li')`
+  list-style: none;
+`;

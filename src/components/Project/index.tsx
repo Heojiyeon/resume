@@ -3,21 +3,23 @@ import ProjectContent from './ProjectContent';
 import ProjectHeader from './ProjectHeader';
 import { projects } from '../../utils/projectData';
 import styled from '@emotion/styled';
+import { FONT_HIGHLIGHT } from '../../utils/constants';
 
 export default function Project() {
   return (
-    <ProjectContentContainer>
-      <h1>Projects</h1>
+    <>
+      <h1 style={{ color: FONT_HIGHLIGHT }}>Projects.</h1>
       {projects.map(project => (
-        <div key={project._id}>
+        <ProjectContentContainer key={project._id}>
           <ProjectHeader header={project.header} />
           <ProjectContent content={project.content} />
-        </div>
+          <br />
+        </ProjectContentContainer>
       ))}
-    </ProjectContentContainer>
+    </>
   );
 }
 
 const ProjectContentContainer = styled('div')`
-  margin: 1rem;
+  margin-bottom: 1rem;
 `;

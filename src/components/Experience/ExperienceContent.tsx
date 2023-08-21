@@ -17,6 +17,7 @@ export default function ExperienceContent({ content }: ExperienceContentProp) {
     <div>
       {description}
       <br />
+      <br />
       <a href={links?.link}>{links?.title}</a>
     </div>
   );

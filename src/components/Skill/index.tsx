@@ -1,11 +1,12 @@
 import React from 'react';
-import SkillContent from './SkillContent';
+import { FONT_HIGHLIGHT } from '../../utils/constants';
 import { skills } from '../../utils/skillData';
+import SkillContent from './SkillContent';
 
 export default function Skill() {
   return (
     <div>
-      <h1>Skills</h1>
+      <h1 style={{ color: FONT_HIGHLIGHT, marginTop: 0 }}>Skills.</h1>
       {skills.map(skill => (
         <>
           <h2>{skill.title}</h2>

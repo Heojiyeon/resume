@@ -1,15 +1,24 @@
+import styled from '@emotion/styled';
 import React from 'react';
 
 type SkllContentProp = {
-  contents: string[];
+  contents: (string | string[])[];
 };
 
 export default function SkillContent({ contents }: SkllContentProp) {
   return (
-    <ul>
+    <StyledUl>
       {contents.map((content, idx) => (
-        <li key={idx}>{content}</li>
+        <StyledLi key={idx}>{content} </StyledLi>
       ))}
-    </ul>
+    </StyledUl>
   );
 }
+
+const StyledUl = styled('ul')`
+  padding: 0;
+`;
+
+const StyledLi = styled('li')`
+  list-style: none;
+`;
