@@ -1,5 +1,23 @@
 import React from 'react';
 
-export default function ExperienceContent() {
-  return <div>Experience Content</div>;
+type ExperienceContentProp = {
+  content: {
+    description: string;
+    links?: {
+      title: string;
+      link: string;
+    };
+  };
+};
+
+export default function ExperienceContent({ content }: ExperienceContentProp) {
+  const { description, links } = content;
+
+  return (
+    <div>
+      {description}
+      <br />
+      <a href={links?.link}>{links?.title}</a>
+    </div>
+  );
 }
