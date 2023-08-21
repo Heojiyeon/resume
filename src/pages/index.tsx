@@ -1,21 +1,21 @@
 import '@fontsource/gothic-a1';
 import type { HeadFC, PageProps } from 'gatsby';
-import React, { useContext, useState } from 'react';
-import Content from '../components/Main/MainContent';
-import DarkModeButton from '../components/common/DarkmodeButton';
-import Main from '../components/Main';
-import { ThemeContext } from '../store/ThemeContext';
+import React from 'react';
+import Header from '../components/Header';
+import Project from '../components/Project';
+import Experience from '../components/Experience';
+import Skill from '../components/Skill';
+import Link from '../components/Link';
 
 const IndexPage: React.FC<PageProps> = () => {
-  const isDark = useContext(ThemeContext);
-
-  const [currTheme, setTheme] = useState(isDark);
-
   return (
-    <ThemeContext.Provider value={currTheme}>
-      <DarkModeButton setTheme={setTheme} />
-      <Main children={<Content />} />
-    </ThemeContext.Provider>
+    <>
+      <Header />
+      <Project />
+      <Experience />
+      <Skill />
+      <Link />
+    </>
   );
 };
 
