@@ -22,13 +22,16 @@ export default function HeaderIntroduce() {
         </PrivacyContactContainer>
       </PrivacyContainer>
       <IntroduceContainer>
-        {HeaderIntroduces.map(introduce => (
-          <div key={introduce._id}>
-            <strong>{introduce.subheading}</strong>
-            <div>{introduce.description}</div>
-            <br />
-          </div>
-        ))}
+        {HeaderIntroduces.map(
+          introduce =>
+            introduce && (
+              <div key={introduce._id}>
+                <strong>{introduce.subheading}</strong>
+                <div>{introduce.description}</div>
+                <br />
+              </div>
+            ),
+        )}
       </IntroduceContainer>
     </HeaderIntroduceContainer>
   );
