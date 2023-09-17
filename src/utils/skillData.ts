@@ -8,7 +8,7 @@ const skills = [
     contents: [
       ['React'],
       ['Vue.js', 'Next.js'],
-      ['Context API', 'Recoil'],
+      ['Context API', 'Recoil', 'Jotai'],
       ['React-Query', 'SWR'],
       ['Axios', 'React-hook-form', 'Formik'],
       ['Emotion', 'Chakra-ui', 'StoryBook'],
