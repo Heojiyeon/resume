@@ -1,11 +1,16 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
+interface Roles {
+  role: string[],
+  result: string[]
+}
+
 type ProjectContentProp = {
   content: {
     description: string;
     goal: string;
-    roles: string[];
+    roles: Roles[];
     results: string[];
     cooperations: string[];
     stacks: string[];
@@ -23,41 +28,38 @@ export default function ProjectContent({ content }: ProjectContentProp) {
   return (
     <div>
       <div>
-        <strong>[설명]</strong>
-        <br />
+        <StyledTitle>[설명]</StyledTitle>
         {description}
       </div>
       <br />
       <div>
-        <strong>[목표]</strong>
-        <br /> {goal}
+        <StyledTitle>[목표]</StyledTitle>
+        {goal}
       </div>
       <StyledUl>
-        <strong>[담당 역할]</strong>
-        {roles.map((role, idx) => (
-          <StyledLi key={roles.length + idx}>{role}</StyledLi>
+        <StyledTitle>[담당 역할 및 성과]</StyledTitle>
+        {roles.map((currentRole, idx) => (
+          <StyledUl key={roles.length + idx} style={{ fontWeight:'bold', marginBottom: '1rem'}}>{currentRole.role}
+            {currentRole.result && currentRole.result.map(currentResult => (
+              <li style={{fontWeight: 'normal', listStyle:"none",  marginTop: '0.2rem'}}>{currentResult}</li>
+            ))}
+          </StyledUl>
         ))}
       </StyledUl>
       <StyledUl>
-        <strong>[성과 및 배운점]</strong>
-        {results.map((result, idx) => (
-          <StyledLi key={results.length + idx}>{result}</StyledLi>
-        ))}
-      </StyledUl>
-      <StyledUl>
-        <strong>[협업]</strong>
+        <StyledTitle>[협업]</StyledTitle>
         {cooperations.map((cooperation, idx) => (
           <StyledLi key={cooperations.length + idx}>{cooperation}</StyledLi>
         ))}
       </StyledUl>
       <StyledUl>
-        <strong>[사용 기술]</strong>
+        <StyledTitle>[사용 기술]</StyledTitle>
         {stacks.map((stack, idx) => (
           <StyledLi key={stacks.length + idx}> {stack}</StyledLi>
         ))}
       </StyledUl>
       <StyledUl>
-        <strong>[관련 링크]</strong>
+        <StyledTitle>[관련 링크]</StyledTitle>
         <StyledLi>
           <a href={links.github}>Github</a>
         </StyledLi>
@@ -70,6 +72,12 @@ export default function ProjectContent({ content }: ProjectContentProp) {
     </div>
   );
 }
+
+const StyledTitle = styled('div')`
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+`
 
 const StyledUl = styled('ul')`
   padding: 0;

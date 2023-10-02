@@ -7,9 +7,9 @@ const skills = [
     title: 'Frontend',
     contents: [
       ['React'],
-      ['Vue.js', 'Next.js'],
+      ['Next.js'],
       ['Context API', 'Recoil', 'Jotai'],
-      ['React-Query', 'SWR'],
+      ['Tanstack-Query', 'SWR'],
       ['Axios', 'React-hook-form', 'Formik'],
       ['Emotion', 'Chakra-ui', 'StoryBook'],
     ],
