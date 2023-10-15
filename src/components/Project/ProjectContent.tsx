@@ -9,47 +9,32 @@ interface Roles {
 type ProjectContentProp = {
   content: {
     description: string;
-    goal: string;
-    roles: Roles[];
-    results: string[];
-    cooperations: string[];
-    stacks: string[];
-    links: {
-      github: string;
-      review?: string;
+     roles: Roles[]; 
+     cooperations: string[]; 
+     stacks: string[]; 
+     links: { 
+      github: string; 
+      review?: string | undefined; 
     };
   };
 };
 
 export default function ProjectContent({ content }: ProjectContentProp) {
-  const { description, goal, roles, results, cooperations, stacks, links } =
+  const { description, roles, stacks, links } =
     content;
 
   return (
     <div>
       <div>
-        <StyledTitle>[설명]</StyledTitle>
         {description}
       </div>
-      <br />
-      <div>
-        <StyledTitle>[목표]</StyledTitle>
-        {goal}
-      </div>
       <StyledUl>
-        <StyledTitle>[담당 역할 및 성과]</StyledTitle>
         {roles.map((currentRole, idx) => (
           <StyledUl key={roles.length + idx} style={{ fontWeight:'bold', marginBottom: '1rem'}}>{currentRole.role}
             {currentRole.result && currentRole.result.map(currentResult => (
               <li style={{fontWeight: 'normal', listStyle:"none",  marginTop: '0.2rem'}}>{currentResult}</li>
             ))}
           </StyledUl>
-        ))}
-      </StyledUl>
-      <StyledUl>
-        <StyledTitle>[협업]</StyledTitle>
-        {cooperations.map((cooperation, idx) => (
-          <StyledLi key={cooperations.length + idx}>{cooperation}</StyledLi>
         ))}
       </StyledUl>
       <StyledUl>
@@ -81,6 +66,7 @@ const StyledTitle = styled('div')`
 
 const StyledUl = styled('ul')`
   padding: 0;
+  margin-top: 2rem;
 `;
 
 const StyledLi = styled('li')`

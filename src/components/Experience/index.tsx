@@ -9,17 +9,16 @@ export default function Experience() {
   return (
     <div>
       <h1 style={{ color: FONT_HIGHLIGHT, marginBottom: '2rem' }}>
-        Other experiences.
+        Awards.
       </h1>
       {experiences.map(experience => (
         <div
           key={experience._id}
           style={{
-            marginBottom: '4rem',
+            marginBottom: '1rem',
           }}
         >
           <ExperienceHeader header={experience.header} />
-          <ExperienceContent content={experience.content} />
         </div>
       ))}
     </div>

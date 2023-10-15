@@ -13,7 +13,6 @@ export default function Project() {
         <ProjectContentContainer key={project._id}>
           <ProjectHeader header={project.header} />
           <ProjectContent content={project.content} />
-          <br />
         </ProjectContentContainer>
       ))}
     </>

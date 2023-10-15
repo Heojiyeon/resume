@@ -1,22 +1,27 @@
+import styled from '@emotion/styled';
 import React from 'react';
 import {
-  HeaderIntroduces,
   HeaderContacts,
+  HeaderIntroduces,
   HeaderTitle,
 } from '../../utils/headerData';
-import styled from '@emotion/styled';
 
 export default function HeaderIntroduce() {
   return (
     <HeaderIntroduceContainer>
       <PrivacyContainer>
-        <h1>{HeaderTitle}</h1>
+        <div style={{display: 'flex', alignItems: 'end'}}>
+        <h1>{HeaderTitle}</h1> <div style={{marginLeft: '1rem', marginBottom: '1.6rem'}}>Heo ji yeon</div>
+        </div>
         <PrivacyContactContainer>
           {HeaderContacts.map(contact => (
             <div key={contact._id}>
               <strong>{contact.title}</strong>
               {contact.title.length === 5 ? <>: </> : <>: </>}
-              <a href={contact.content}>{contact.content}</a>
+              {
+                contact.title === 'Phone' || contact.title ===  'Email' || contact.title === 'Birth'? <>{contact.content}</> : <a href={contact.content}>{contact.content}</a>
+              }
+              
             </div>
           ))}
         </PrivacyContactContainer>
@@ -26,8 +31,7 @@ export default function HeaderIntroduce() {
           introduce =>
             introduce && (
               <div key={introduce._id}>
-                <strong>{introduce.subheading}</strong>
-                <div>{introduce.description}</div>
+                {introduce.subheading}
                 <br />
               </div>
             ),
@@ -44,9 +48,11 @@ const HeaderIntroduceContainer = styled('div')`
 const PrivacyContainer = styled('div')`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const PrivacyContactContainer = styled('div')`
+  margin-bottom: 1rem;
   width: 40%;
 `;
 
